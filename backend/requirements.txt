@@ -8,6 +8,7 @@ langchain-community==0.3.18
 langchain-core==0.3.49
 langchain-text-splitters==0.3.6
 langchain-groq==0.3.2
+langgraph==0.2.76
 faiss-cpu==1.9.0.post1
 scikit-learn==1.6.1
 docx2txt==0.8
