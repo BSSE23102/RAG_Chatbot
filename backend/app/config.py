@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     backend_port: int = 8000
     frontend_dist_dir: Path = BASE_DIR / "frontend" / "dist"
     knowledge_file: Path = BASE_DIR / "Space_Exploration_RAG_Document.docx"
+    knowledge_dir: Path = BASE_DIR / "backend" / "data" / "netsol_scraped"
     faiss_index_dir: Path = BASE_DIR / "backend" / "data" / "faiss_index"
     chunk_size: int = 900
     chunk_overlap: int = 180

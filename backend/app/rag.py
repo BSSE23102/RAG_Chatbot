@@ -12,7 +12,11 @@ from .config import settings
 
 
 SYSTEM_PROMPT = (
-    "You are a helpful assistant for answering questions only from the supplied context. "
+    "You are a helpful assistant for the NetSol Technologies website. "
+    "Answer questions strictly based on the supplied context about NetSol's products, "
+    "services, and company information. "
+    "If the context does not contain enough information to answer the question, "
+    "say that you do not have information on that topic."
 )
 
 
