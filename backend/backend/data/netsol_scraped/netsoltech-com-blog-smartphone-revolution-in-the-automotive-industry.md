@@ -1,0 +1,50 @@
+[](https://netsoltech.com/)
+  * Platform 
+  * [Marketplace](https://netsoltech.com/marketplace)
+  * Consultancy 
+  * Solutions 
+  * [Insights](https://netsoltech.com/insights)
+  * About Us 
+  * [Contact Us](https://netsoltech.com/contact-us#contactUsForm)
+
+
+Blog
+# Smartphone Revolution in the Automotive Industry
+By [Naeem Ghauri](https://www.linkedin.com/company/netsol-technologies-inc-/) Founder & President, NETSOL Technologies Inc., on December 31, 2017
+In this internet age, the retail industry finds itself at the hub of revolutionary activity where there is a constant chain of events which have been setting the grounds for trailblazing ideas to take effect. The status is continuously being challenged by disruptive technologies of all kinds that are pushing the envelope and forcing the other industries to play catch-up. This is happening even more rapidly as smart-phones are becoming more ubiquitous in established markets. 
+[](https://netsoltech.com/)
+![](https://cms.netsoltech.com/NetsolTechCMS/uploads/Articles/Smartphone-Revolution.jpg)
+### Table of Contents
+###  Share this Blog: 
+[![Facebook](https://netsoltech.com/images/logos/facebook.svg)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnetsoltech.com%2Fblog%2Fsmartphone-revolution-in-the-automotive-industry&quote=In%20this%20internet%20age%2C%20the%20retail%20industry%20finds%20itself%20at%20the%20hub%20of%20revolutionary%20activity%20where%20there%20is%20a%20constant%20chain%20of%20events%20which%20have%20been%20setting%20the%20grounds%20for%20trailblazing%20ideas%20to%20take%20effect.%20The%20status%20is%20continuously%20being%20challenged%20by%20disruptive%20technologies%20of%20all%20kinds%20that%20are%20pushing%20the%20envelope%20and%20forcing%20the%20other%20industries%20to%20play%20catch-up.%20This%20is%20happening%20even%20more%20rapidly%20as%20smart-phones%20are%20becoming%20more%20ubiquitous%20in%20established%20markets.%20)[![LinkedIn](https://netsoltech.com/images/logos/linkedin.svg)](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fnetsoltech.com%2Fblog%2Fsmartphone-revolution-in-the-automotive-industry&title=In%20this%20internet%20age%2C%20the%20retail%20industry%20finds%20itself%20at%20the%20hub%20of%20revolutionary%20activity%20where%20there%20is%20a%20constant%20chain%20of%20events%20which%20have%20been%20setting%20the%20grounds%20for%20trailblazing%20ideas%20to%20take%20effect.%20The%20status%20is%20continuously%20being%20challenged%20by%20disruptive%20technologies%20of%20all%20kinds%20that%20are%20pushing%20the%20envelope%20and%20forcing%20the%20other%20industries%20to%20play%20catch-up.%20This%20is%20happening%20even%20more%20rapidly%20as%20smart-phones%20are%20becoming%20more%20ubiquitous%20in%20established%20markets.%20)[![X \(Twitter\)](https://netsoltech.com/images/logos/twitter.svg)](https://twitter.com/intent/tweet?url=https%3A%2F%2Fnetsoltech.com%2Fblog%2Fsmartphone-revolution-in-the-automotive-industry&text=In%20this%20internet%20age%2C%20the%20retail%20industry%20finds%20itself%20at%20the%20hub%20of%20revolutionary%20activity%20where%20there%20is%20a%20constant%20chain%20of%20events%20which%20have%20been%20setting%20the%20grounds%20for%20trailblazing%20ideas%20to%20take%20effect.%20The%20status%20is%20continuously%20being%20challenged%20by%20disruptive%20technologies%20of%20all%20kinds%20that%20are%20pushing%20the%20envelope%20and%20forcing%20the%20other%20industries%20to%20play%20catch-up.%20This%20is%20happening%20even%20more%20rapidly%20as%20smart-phones%20are%20becoming%20more%20ubiquitous%20in%20established%20markets.%20)
+Many industries, which had previously been operating under well-established though obsolete setups, are being replaced by mere smartphone applications; this signifies the reach of the smartphone revolution and the deep-rooted impact it is destined to have. Of the [transcend retail solutions](https://netsoltech.com/products/digital-retail) industry, it is the automotive business that is looking to make the biggest impression with the use of mobile technology. 
+This is largely because of the nature of its informed customers and their ever-increasing demands for the employment of state of the art processes and techniques that guarantee an enriching experience of car buying and selling.
+## **A Positive Change Regarding the Car Retail Industry and the Use of Smart-phones**
+Mobile technology, like in other industries, has already made many changes to the future of car driving in general. Advanced and state of the art technology is responsible for bringing us a new generation of cars, as well as introducing trends that ensure a safer, more comfortable and luxurious car driving experience. However, the question of the moment is if there is room for any more advancement? The answer is a resounding yes! As time goes on, mobile technology will be well on its way to changing the way we shop for and buy cars.
+### **A Positive Change Regarding the Car Retail Industry and the Use of Smart-phones**
+Mobile technology, like in other industries, has already made many changes to the future of car driving in general. Advanced and state of the art technology is responsible for bringing us a new generation of cars, as well as introducing 
+To support the above statement, let me quote the results of a recent survey that was conducted to determine how mobile savvy auto shoppers have become. In the last year, 81% of the consumers looking to buy a car used their smart-phone for research purposes; while nearly a quarter of car shoppers used their smart-phone apps for research about the products that the car dealership sold, prior to visiting it. Moreover, nearly 72% of smart-phone users were more likely to visit more than one dealership's website and purchase a car, as compared to shoppers without a smartphone.
+During the past decade, online advertising has helped grow and revolutionize the car retail industry to an incredible extent. Similarly, now the mobile shopping is looking have an equally staggering impact that will bring more success for the industry. Not only have the dealers found a new way to connect quickly and effectively with customers, but the car retail industry is also on its way to attaining major growth in the future. Are Retailers Prepared for the Incoming Mobile Commerce? Surprisingly enough, retailers are not even remotely ready to tackle and make use of the thriving smartphone era, despite evidence stating that more and more shoppers are turning to online avenues to shop and look for [automotive finance](https://netsoltech.com/solutions/automotive-finance).
+Interestingly enough, while dealing with [brick and mortar dealerships](https://www.investopedia.com/terms/b/brickandmortar.asp), 57% of the consumers out of the 70% of smart-phone owners use their devices for making purchasing decisions and actual transactions. Furthermore, 53% of the consumers were not satisfied with their mobile shopping experience, a statistic which used to hover around 61%, can only be considered more good news for the car retail industry.
+The main reason for the dissatisfaction of smart-phone users regarding car shopping stems from the fact that a lesser effort is being put by retail businesses and dealerships when it comes to providing advanced and effective e-commerce solutions. In my opinion, retailers will need to step up their game and come up with mobile optimized and efficient websites and applications that promise a rich and consistent experience to consumers.
+Customer friendly features should be adopted, which increase app usability and enable consumers to navigate easily through the entire portfolio of the dealerships and complete a transaction, all in the span of a few minutes.
+### **Data Security of Consumers Still Remains a Major Concern**
+Perhaps the gravest concern yet is that of consumers still having a hard time getting used to using their smartphones for making [car buyer preferences](https://netsoltech.com/blog/auto-finance-software-and-changing-car-buyer-preferences) due to the security risks that come as a part of this revolution. According to a highly publicized report, a lot of data breaches at major retailers have caused consumers to become cautious and skeptical of this method. It was found out that 42% of consumers preferred the traditional way of purchasing products, as opposed to using their smart-phones, due to being unsure of the transaction security.
+However, despite all the misgivings of this phenomena, there is not much which can hold mobile commerce back if and when car retailers do come up with an effective solution to protect the personal details and financial information of shoppers. This boom of smartphone usage for online shopping is looking to stay and completely revolutionize the car retail industry.
+![Banner Background](https://netsoltech.com/images/insights/imagebanner.png)
+If you're in BFSI (Banking, Financial Services, and Insurance), standing still isn't an option.
+Future of Technology
+[](https://netsoltech.com/contact-us)
+## Related blogs
+![Broker-Lender Alignment: The Future of Asset Finance Success](https://cms.netsoltech.com/NetsolTechCMS/uploads/Articles/thumbnails/1780895753_6a2650092679e.png)
+Blog
+### Broker-Lender Alignment: The Future of Asset Finance Success
+[Read more ](https://netsoltech.com/blog/broker-lender-alignement)
+![From manual friction to intelligent workflows: The next step for equipment finance ](https://cms.netsoltech.com/NetsolTechCMS/uploads/Articles/thumbnails/1779709936_6a1437f0cb5a8.png)
+Blog
+### From manual friction to intelligent workflows: The next step for equipment finance 
+[Read more ](https://netsoltech.com/blog/intelligent-workflows-for-equipment-finance-lenders)
+![Cyber resilience in APAC: Why 2026 demands more than traditional defence](https://cms.netsoltech.com/NetsolTechCMS/uploads/Articles/thumbnails/1778494790_6a01ad46cc6ce.jpeg)
+Blog
+### Cyber resilience in APAC: Why 2026 demands more than traditional defence
+[Read more ](https://netsoltech.com/blog/cyber-resilience-in-apac)

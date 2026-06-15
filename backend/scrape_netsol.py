@@ -103,6 +103,38 @@ def is_internal(url: str) -> bool:
         return False
 
 
+def clean_markdown(text: str) -> str:
+    """Clean raw Crawl4AI markdown output for use as RAG knowledge.
+
+    Removes navigation boilerplate, excessive whitespace, cookie banners,
+    repeated separators, and other noise that degrades retrieval quality.
+    """
+    # Drop lines that are pure horizontal rules (--- / *** / ___)
+    text = re.sub(r"^[-*_]{3,}\s*$", "", text, flags=re.MULTILINE)
+
+    # Drop image-only lines: ![...](...) with nothing else
+    text = re.sub(r"^!\[.*?\]\(.*?\)\s*$", "", text, flags=re.MULTILINE)
+
+    # Drop bare hyperlink lines: [text](url) with nothing else on the line
+    text = re.sub(r"^\[.*?\]\(.*?\)\s*$", "", text, flags=re.MULTILINE)
+
+    # Drop lines that look like nav/cookie/footer noise (common patterns)
+    noise_patterns = [
+        r"(?i)^(skip to (main )?content|cookie policy|accept (all )?cookies?|privacy policy)",
+        r"(?i)^(all rights reserved|copyright ©|\u00a9)",
+        r"(?i)^(home\s*[>|/]|breadcrumb)",
+        r"(?i)^\s*(menu|navigation|search\.\.\.)\s*$",
+        r"(?i)^(subscribe to|sign up for|follow us on)",
+    ]
+    for pat in noise_patterns:
+        text = re.sub(pat, "", text, flags=re.MULTILINE)
+
+    # Collapse 3+ consecutive blank lines into 2
+    text = re.sub(r"\n{3,}", "\n\n", text)
+
+    return text.strip()
+
+
 # ---------------------------------------------------------------------------
 # Async crawl engine
 # ---------------------------------------------------------------------------
@@ -186,7 +218,7 @@ async def crawl(
                 used_filenames.add(filename)
 
                 file_path = output_dir / filename
-                file_path.write_text(markdown_content, encoding="utf-8")
+                file_path.write_text(clean_markdown(markdown_content), encoding="utf-8")
                 logger.info("Wrote %s", file_path)
                 summary.succeeded += 1
 

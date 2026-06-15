@@ -6,7 +6,7 @@ from langchain_core.documents import Document
 from langchain_core.messages import BaseMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langgraph.graph import END, START, StateGraph
-from langchain_groq import ChatGroq
+from langchain_openai import ChatOpenAI
 
 from .config import settings
 
@@ -31,10 +31,10 @@ class RAGState(TypedDict, total=False):
 class RAGService:
     def __init__(self, vector_store) -> None:
         self.vector_store = vector_store
-        if not settings.groq_api_key:
-            raise RuntimeError("GROQ_API_KEY is not set. Add it to backend/.env before starting the app.")
+        if not settings.openai_api_key:
+            raise RuntimeError("OPENAI_API_KEY is not set. Add it to backend/.env before starting the app.")
 
-        self.llm = ChatGroq(model=settings.groq_model, api_key=settings.groq_api_key, temperature=0.2)
+        self.llm = ChatOpenAI(model=settings.openai_model, api_key=settings.openai_api_key, temperature=0.2)
         self.contextualize_prompt = ChatPromptTemplate.from_messages(
             [
                 ("system", "Rewrite the latest user question so it can be answered without prior chat history. Do not answer it."),
