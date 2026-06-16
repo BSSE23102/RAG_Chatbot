@@ -6,7 +6,7 @@ from langchain_core.documents import Document
 from langchain_core.messages import BaseMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langgraph.graph import END, START, StateGraph
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 from .config import settings
 
@@ -31,15 +31,21 @@ class RAGState(TypedDict, total=False):
 class RAGService:
     def __init__(self, vector_store) -> None:
         self.vector_store = vector_store
-        if not settings.openai_api_key:
-            raise RuntimeError("OPENAI_API_KEY is not set. Add it to backend/.env before starting the app.")
+        if not settings.google_api_key:
+            raise RuntimeError("GEMINI_API_KEY is not set. Add it to backend/.env before starting the app.")
 
-        self.llm = ChatOpenAI(model=settings.openai_model, api_key=settings.openai_api_key, temperature=0.2)
+        self.llm = ChatGoogleGenerativeAI(model=settings.chat_model, google_api_key=settings.google_api_key, temperature=0.2)
         self.contextualize_prompt = ChatPromptTemplate.from_messages(
             [
-                ("system", "Rewrite the latest user question so it can be answered without prior chat history. Do not answer it."),
-                MessagesPlaceholder("chat_history"),
-                ("human", "{input}"),
+                (
+                    "human",
+                    "Given the following conversation history and a follow-up question, rewrite the follow-up question to be a standalone question (i.e. self-contained and search-friendly). "
+                    "Do NOT answer the question, do NOT add any conversational introduction, just output the rewritten standalone question.\n\n"
+                    "Conversation History:\n"
+                    "{chat_history}\n\n"
+                    "Follow-up Question: {input}\n\n"
+                    "Standalone Question:"
+                )
             ]
         )
         self.answer_prompt = ChatPromptTemplate.from_messages(
@@ -65,7 +71,11 @@ class RAGService:
         if not chat_history:
             return {"standalone_question": question}
 
-        messages = self.contextualize_prompt.format_messages(chat_history=chat_history, input=question)
+        formatted_history = "\n".join(
+            f"{'Human' if msg.type == 'human' else 'Assistant'}: {msg.content}"
+            for msg in chat_history
+        )
+        messages = self.contextualize_prompt.format_messages(chat_history=formatted_history, input=question)
         response = self.llm.invoke(messages)
         standalone_question = getattr(response, "content", str(response)).strip()
         return {"standalone_question": standalone_question or question}
