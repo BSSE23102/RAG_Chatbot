@@ -1,4 +1,5 @@
 from __future__ import annotations
+# Reload triggered after FAISS index rebuild.
 
 from pathlib import Path
 import threading

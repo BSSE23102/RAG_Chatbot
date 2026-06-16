@@ -17,11 +17,15 @@ Prerequisites (one-time setup):
     crawl4ai-setup   # installs Playwright browsers required by Crawl4AI
 """
 
+import io
+import sys
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+
 import argparse
 import asyncio
 import logging
 import re
-import sys
 from collections import deque
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -43,9 +47,10 @@ logger = logging.getLogger(__name__)
 # Constants
 # ---------------------------------------------------------------------------
 
-SEED_URL = "https://www.netsoltech.com"
-DEFAULT_OUTPUT_DIR = "backend/data/netsol_scraped"
-_INTERNAL_HOSTNAMES = {"netsoltech.com", "www.netsoltech.com"}
+SCRIPT_DIR = Path(__file__).resolve().parent
+SEED_URLS = ["https://careers.netsoltech.com"]
+DEFAULT_OUTPUT_DIR = SCRIPT_DIR / "data" / "raw_scraped"
+_INTERNAL_HOSTNAMES = {"careers.netsoltech.com"}
 
 # ---------------------------------------------------------------------------
 # Data models
@@ -115,9 +120,6 @@ def clean_markdown(text: str) -> str:
     # Drop image-only lines: ![...](...) with nothing else
     text = re.sub(r"^!\[.*?\]\(.*?\)\s*$", "", text, flags=re.MULTILINE)
 
-    # Drop bare hyperlink lines: [text](url) with nothing else on the line
-    text = re.sub(r"^\[.*?\]\(.*?\)\s*$", "", text, flags=re.MULTILINE)
-
     # Drop lines that look like nav/cookie/footer noise (common patterns)
     noise_patterns = [
         r"(?i)^(skip to (main )?content|cookie policy|accept (all )?cookies?|privacy policy)",
@@ -141,14 +143,14 @@ def clean_markdown(text: str) -> str:
 
 
 async def crawl(
-    seed: str,
+    seeds: list[str],
     output_dir: Path,
     max_pages: int | None = None,
 ) -> CrawlSummary:
-    """BFS async crawl starting from *seed*, writing one .md file per page.
+    """BFS async crawl starting from *seeds*, writing one .md file per page.
 
     Args:
-        seed: The starting URL.
+        seeds: The starting URLs.
         output_dir: Directory where markdown files are written.
         max_pages: Optional upper bound on pages to crawl.
 
@@ -159,8 +161,9 @@ async def crawl(
 
     summary = CrawlSummary()
     visited: set[str] = set()
-    queue: deque[str] = deque([seed])
-    visited.add(seed)
+    queue: deque[str] = deque(seeds)
+    for seed in seeds:
+        visited.add(seed)
 
     # Track used filenames to avoid collisions (same slug from different URLs)
     used_filenames: set[str] = set()
@@ -275,7 +278,7 @@ def main() -> None:
     args = parser.parse_args()
 
     output_dir = Path(args.output_dir)
-    summary = asyncio.run(crawl(SEED_URL, output_dir, args.max_pages))
+    summary = asyncio.run(crawl(SEED_URLS, output_dir, args.max_pages))
 
     print(
         f"\nCrawl complete. "

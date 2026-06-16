@@ -4,7 +4,7 @@ from pathlib import Path
 
 # Define paths
 BASE_DIR = Path(__file__).resolve().parent
-SRC_DIR = BASE_DIR / "backend" / "data" / "netsol_scraped"
+SRC_DIR = BASE_DIR / "data" / "raw_scraped"
 DST_DIR = BASE_DIR / "data" / "netsol_scraped"
 
 def clean_markdown_content(content: str) -> str:
@@ -16,11 +16,21 @@ def clean_markdown_content(content: str) -> str:
     if len(cleaned) == len(content):
         cleaned = re.sub(r"(?s)^\s*\[\]\(https?://netsoltech\.com/?\)\s*\* Platform.*?\* \[Contact Us\]\(.*?\)\s*\n*", "", content, flags=re.IGNORECASE)
 
+    # Careers header pattern (cleans up the navigation menu and Login/Register links)
+    cleaned = re.sub(
+        r"(?s)^\s*(\[\s*\]\(https?://careers\.netsoltech\.com/?\)\s*\n)?"
+        r"(\s*\*?\s*\[\s*(Home|Vacancies|Why NETSOL|FAQs|Contact Us|Login|Register)\s*\]\(https?://careers\.netsoltech\.com/.*?\)\s*\n*)+",
+        "",
+        cleaned,
+        flags=re.IGNORECASE
+    )
+
     # 2. Truncate at common footers / noise markers
     markers = [
         r"##\s*Related blogs",
         r"##\s*Related Articles",
-        r"##\s*Related Posts"
+        r"##\s*Related Posts",
+        r"#####\s*Subscribe to our newsletter"
     ]
     for marker in markers:
         parts = re.split(marker, cleaned, maxsplit=1, flags=re.IGNORECASE)
@@ -37,8 +47,15 @@ def clean_markdown_content(content: str) -> str:
     # 4. Strip empty links: [](url)
     cleaned = re.sub(r"\[\]\(.*?\)", "", cleaned)
 
-    # 5. Convert remaining markdown links [text](url) to plain text
-    cleaned = re.sub(r"\[(.*?)\]\(.*?\)", r"\1", cleaned)
+    # 5. Convert remaining markdown links [text](url) to plain text, preserving critical contact links
+    def keep_or_strip_link(match):
+        text = match.group(1)
+        url = match.group(2)
+        if any(keyword in url.lower() for keyword in ["mailto:", "tel:", "netsol"]):
+            return f"[{text}]({url})"
+        return text
+
+    cleaned = re.sub(r"\[(.*?)\]\((.*?)\)", keep_or_strip_link, cleaned)
 
     # 6. Drop lines that are pure horizontal rules or other noise
     cleaned = re.sub(r"^[-*_]{3,}\s*$", "", cleaned, flags=re.MULTILINE)
